@@ -1,7 +1,7 @@
 <p align="center">
-  <img src="https://github.com/retrohv4/username-platform-checkers/blob/main/img/128.png" width="350" title="hover text">
+  <img src="https://github.com/retrohv4/username-platform-checkers/blob/main/img/128.png" width="200" title="hover text">
 </p>
-# username-platform-checkers
+<h4># username-platform-checkers</h4>
 Checking for avaiable usernames on various platforms.
 
 <h3>How to use</h3> First of all, you have to had Node installed.
