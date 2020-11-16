@@ -9,4 +9,6 @@ Choose the platform you want to check, make sure your user/id files be like this
 ![alt text](https://github.com/retrohv4/username-platform-checkers/blob/main/exemple.png)
 
 Software will automatically save avaiable usernames on <b>logs.txt</b>.
-If you find out any bugs, please report on [Issues](https://github.com/retrohv4/username-platform-checkers/issues)
+If you find out any bugs, please report on [Issues](https://github.com/retrohv4/username-platform-checkers/issues) tab.
+
+Oficially made by <b>such#0008</b>
