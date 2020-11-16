@@ -1,4 +1,6 @@
-![alt text](https://github.com/retrohv4/username-platform-checkers/blob/main/img/128.png)
+<p align="center">
+  <img src="https://github.com/retrohv4/username-platform-checkers/blob/main/img/128.png" width="350" title="hover text">
+</p>
 # username-platform-checkers
 Checking for avaiable usernames on various platforms.
 
