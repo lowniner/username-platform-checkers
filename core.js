@@ -83,6 +83,18 @@ function welove(user){
     })
 }
 
+function codea(user) {
+    request(`https://www.codecademy.com/profiles/${user}`, function (error, response, body) {
+        if(response.statusCode == 404) {
+            console.log('\x1b[32m',`${user} not taken.`)
+            logger.write(`${user} OPEN | CodeAcademy\n`)
+        }
+        if (response.statusCode == 200 ) {
+            console.log("\x1b[31m",`${user} taken.`);
+        }
+    })
+}
+
 function steam(user) {
     apiuser.resolve(user).then(id => {
         console.log("\x1b[31m",`${user} taken.`)
@@ -118,7 +130,7 @@ function minecraft(user) {
 }
 
 function asktype() {
-    console.log('[1] Minecraft \n[2] LOL\n[3] Steam /ID \n[4] Soundcloud\n[5] GitHub\n[6] Cracked.to\n[7] We<3');
+    console.log('[1] Minecraft \n[2] LOL\n[3] Steam /ID \n[4] Soundcloud\n[5] GitHub\n[6] Cracked.to\n[7] We<3\n[8] CodeAcademy');
     console.log(' ')
     questions.askOne({ info:'Type' }, function(result){
         if (result == 1) {
@@ -180,6 +192,15 @@ function asktype() {
                 lineReader.eachLine(result, function(line, last) {
                     let user_url = line.replace(' ', '_');
                     welove(user_url);
+                })
+            })
+        }
+        else if (result == 8) {
+            console.clear();
+            questions.askOne({ info:'File name (make sure to add .txt at the end)' }, function(result) {
+                lineReader.eachLine(result, function(line, last) {
+                    let user_url = line.replace(' ', '_');
+                    codea(user_url);
                 })
             })
         }
