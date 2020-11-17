@@ -59,6 +59,17 @@ function github(user) {
         }
     })
 }
+function cracked(user) {
+    request(`https://cracked.to/${user}`, function (error, response, body){
+        if(response.statusCode == 404) {
+            console.log('\x1b[32m',`${user} not taken.`)
+            logger.write(`${user} OPEN | Cracked\n`)
+        }
+        if (response.statusCode == 200 ) {
+            console.log("\x1b[31m",`${user} taken.`);
+        }
+    })
+}
 
 function steam(user) {
     apiuser.resolve(user).then(id => {
@@ -95,7 +106,7 @@ function minecraft(user) {
 }
 
 function asktype() {
-    console.log('[1] Minecraft \n[2] LOL\n[3] Steam /ID \n[4] Soundcloud\n[5] GitHub');
+    console.log('[1] Minecraft \n[2] LOL\n[3] Steam /ID \n[4] Soundcloud\n[5] GitHub\n[6] Cracked.to');
     console.log(' ')
     questions.askOne({ info:'Type' }, function(result){
         if (result == 1) {
@@ -139,6 +150,15 @@ function asktype() {
             questions.askOne({ info:'File name (make sure to add .txt at the end)' }, function(result) {
                 lineReader.eachLine(result, function(line, last) {
                     github(line);
+                })
+            })
+        }
+        else if (result == 6) {
+            console.clear();
+            questions.askOne({ info:'File name (make sure to add .txt at the end)' }, function(result) {
+                lineReader.eachLine(result, function(line, last) {
+                    let user_url = line.replace(' ', '-');
+                    cracked(user_url);
                 })
             })
         }
