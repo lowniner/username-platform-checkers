@@ -31,7 +31,7 @@ setTimeout(asktype, 1500);
 start();
 
 var logger = fs.createWriteStream('log.txt', {
-    flags: 'a' // 'a' means appending (old data will be preserved)
+    flags: 'a'
   })
   
 
